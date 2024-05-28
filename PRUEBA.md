@@ -14,7 +14,8 @@ El objetivo de esta prueba es demostrar tu capacidad para integrar múltiples AP
    - Aquí tienes la API Key de Giphy: `TU_API_KEY_AQUI`.
 
 3. **Mostrar el resultado**:
-   - Presenta el GIF y el texto del hecho sobre gatos en una página web.
+   - Obtener un "fact" sobre gatos
+   - Una vez obtenido dicho "fact" se obtendrán las 3 primeras palabras para buscar un gif de gatos.
    - El GIF debe estar alineado a la izquierda y el texto del hecho a la derecha, ambos centrados verticalmente.
 
 ## Requisitos Técnicos
