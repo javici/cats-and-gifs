@@ -5,7 +5,7 @@ import { getGifUrl } from '../services/gifs.service';
 
 const catFact = await getCatFact();
 const firstThreeWords = catFact.split(' ').slice(0, 3).join(' ');
-const gifUrl = await getGifUrl('firstThreeWords');
+const gifUrl = await getGifUrl(firstThreeWords);
 ---
 
 <Layout title='Cats and Gifs'>
