@@ -2,8 +2,10 @@
 
 [![Built with Astro](./public/astro.svg)](https://astro.build)
 
-## How to start
+## How to start
 
+`nvm use`
+`npm ci`
 `npm run dev`
 
 ## 🚀 Project Structure
