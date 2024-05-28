@@ -1,32 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCatFact } from '../services/cats.service';
+import { getGifUrl } from '../services/gifs.service';
 
-const catFact = await fetch('https://catfact.ninja/fact');
-const { fact }: { fact: string } = await catFact.json();
-const factSplitted = fact.split(' ').slice(0, 3).join(' ');
-console.log('🧪 debug 🧪 factSplitted:', factSplitted);
-const API_URL = new URL('https://api.giphy.com/v1/gifs/search');
-const searchParams = new URLSearchParams({
-  api_key: '30pmYNfINV4iNg5tz5Nbu6wLfDWmMYBf',
-  q: factSplitted,
-  limit: '1',
-});
-
-const gif = await fetch(`${API_URL}?${searchParams}`);
-const gifResponse = await gif.json();
-console.log(
-  '🧪 debug 🧪 gifResponse:',
-  gifResponse.data[0].images.downsized.url
-);
+const catFact = await getCatFact();
+const firstThreeWords = catFact.split(' ').slice(0, 3).join(' ');
+const gifUrl = await getGifUrl('firstThreeWords');
 ---
 
 <Layout title='Cats and Gifs'>
   <main>
     <section>
-      <img src={gifResponse.data[0].images.downsized.url} alt='' />
+      <img src={gifUrl} alt='Cat Gif' />
     </section>
     <section>
-      {fact}
+      {catFact}
     </section>
   </main>
 </Layout>
