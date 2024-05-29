@@ -11,9 +11,11 @@ const gifUrl = await getGifUrl(firstThreeWords);
 <Layout title='Cats and Gifs'>
   <main>
     <section>
+      <h3>Cat</h3>
       <img src={gifUrl} alt='Cat Gif' />
     </section>
     <section>
+      <h3>Fact</h3>
       {catFact}
     </section>
   </main>
@@ -21,15 +23,28 @@ const gifUrl = await getGifUrl(firstThreeWords);
 
 <style>
   main {
-    padding: 1rem;
+    padding: 40px;
     justify-content: center;
-    color: white;
+    color: black;
     font-size: 20px;
     line-height: 1.6;
-    align-items: center;
+    align-items: flex-start;
     gap: 34px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     display: grid;
+    height: calc(100dvh - 120px);
+    overflow-y: auto;
+
+    section {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px;
+        max-height: 700px;
+      }
+    }
   }
 
   h1 {
